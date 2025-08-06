@@ -644,22 +644,24 @@ section {
 }
 .project-card {
     background: none;
-    border-radius: 0;
+    border-radius: 12px;
     box-shadow: none;
-    padding: 0 1.5rem 0 1.5rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: transform 0.3s;
+    transition: all 0.4s ease;
     color: #fff;
     position: relative;
     overflow: visible;
-    border: none;
+    border: 2px solid transparent;
 }
 .project-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: none;
-    border: none;
+    transform: translateY(-10px) scale(1.05);
+    border: 2px solid #ff0040;
+    box-shadow: 0 15px 35px rgba(255, 0, 64, 0.3), 
+                0 0 25px rgba(255, 0, 64, 0.2);
+    background: rgba(255, 0, 64, 0.05);
 }
 .project-header {
     width: 100%;
