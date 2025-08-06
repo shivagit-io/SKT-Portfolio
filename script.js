@@ -344,7 +344,45 @@ function createParticles(containerId, color = '#fff', count = 24) {
     }
     animate();
 }
+// Theme Toggle Functionality
+function initTheme() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+    
+    // Check for saved theme preference or default to 'dark'
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+    
+    function setTheme(theme) {
+        if (theme === 'light') {
+            body.setAttribute('data-theme', 'light');
+            themeIcon.className = 'fas fa-moon';
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.removeAttribute('data-theme');
+            themeIcon.className = 'fas fa-sun';
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+    
+    function toggleTheme() {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        
+        // Add a smooth transition effect
+        body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+        setTimeout(() => {
+            body.style.transition = '';
+        }, 300);
+    }
+    
+    themeToggle.addEventListener('click', toggleTheme);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     createParticles('hero-particles', '#fff', 24);
     createParticles('techstack-particles', '#00d4ff', 18);
+    initTheme();
 }); 

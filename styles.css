@@ -1,3 +1,28 @@
+/* CSS Variables for Theme */
+:root {
+    /* Dark Theme (Default) */
+    --bg-primary: #000;
+    --bg-secondary: rgba(0, 0, 0, 0.82);
+    --text-primary: #fff;
+    --text-secondary: #e0e0e0;
+    --accent-color: #ff0040;
+    --navbar-bg: rgba(0, 0, 0, 0.95);
+    --navbar-text: #fff;
+    --section-bg: url('https://www.transparenttextures.com/patterns/cubes.png'), #000;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --bg-primary: #f8fafc;
+    --bg-secondary: rgba(255, 255, 255, 0.9);
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --accent-color: #dc2626;
+    --navbar-bg: rgba(0, 0, 0, 0.95);
+    --navbar-text: #fff;
+    --section-bg: url('https://www.transparenttextures.com/patterns/cubes.png'), #f8fafc;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -12,9 +37,10 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: white;
-    background-color: #000;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
     position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -28,11 +54,11 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--navbar-bg);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
@@ -78,6 +104,34 @@ body {
     transition: color 0.3s, text-shadow 0.3s, letter-spacing 0.3s, transform 0.3s;
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--navbar-text);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--navbar-text);
+    font-size: 1.1rem;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+    transform: rotate(180deg);
+}
+
+.theme-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 23, 68, 0.3);
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -86,14 +140,14 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: #374151;
+    color: var(--navbar-text);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
 }
 
 .nav-link:hover {
-    color: #2563eb;
+    color: var(--accent-color);
 }
 
 .nav-link::after {
@@ -103,7 +157,7 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #2563eb;
+    background-color: var(--accent-color);
     transition: width 0.3s ease;
 }
 
@@ -120,7 +174,7 @@ body {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: #374151;
+    background-color: var(--navbar-text);
     margin: 3px 0;
     transition: 0.3s;
 }
@@ -520,7 +574,7 @@ section {
 /* Tech Stack Section */
 .tech-stack {
     position: relative;
-    background: url('https://www.transparenttextures.com/patterns/cubes.png'), #000;
+    background: var(--section-bg);
     background-size: 340px, cover;
     background-repeat: repeat, no-repeat;
     background-position: center center;
@@ -534,7 +588,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.82);
+    background: var(--bg-secondary);
     z-index: 0;
 }
 .tech-stack .container, .tech-stack .section-title, .techstack-grid, .techstack-category, .techstack-items, .techstack-item {
