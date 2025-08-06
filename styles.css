@@ -3,24 +3,34 @@
     /* Dark Theme (Default) */
     --bg-primary: #000;
     --bg-secondary: rgba(0, 0, 0, 0.82);
+    --bg-card: rgba(255, 255, 255, 0.05);
     --text-primary: #fff;
     --text-secondary: #e0e0e0;
+    --text-muted: #9ca3af;
     --accent-color: #ff0040;
+    --accent-hover: #ff416c;
     --navbar-bg: rgba(0, 0, 0, 0.95);
     --navbar-text: #fff;
     --section-bg: url('https://www.transparenttextures.com/patterns/cubes.png'), #000;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Light Theme */
 [data-theme="light"] {
     --bg-primary: #f8fafc;
-    --bg-secondary: rgba(255, 255, 255, 0.9);
+    --bg-secondary: rgba(248, 250, 252, 0.9);
+    --bg-card: rgba(255, 255, 255, 0.8);
     --text-primary: #1f2937;
     --text-secondary: #4b5563;
+    --text-muted: #6b7280;
     --accent-color: #dc2626;
+    --accent-hover: #ef4444;
     --navbar-bg: rgba(0, 0, 0, 0.95);
     --navbar-text: #fff;
     --section-bg: url('https://www.transparenttextures.com/patterns/cubes.png'), #f8fafc;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Reset and Base Styles */
@@ -545,7 +555,7 @@ section {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
-    color: #fff;
+    color: var(--text-primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -553,7 +563,7 @@ section {
 }
 
 .section-title i {
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .section-divider {
@@ -617,7 +627,7 @@ section {
 }
 
 .tech-category h3 {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
@@ -664,7 +674,7 @@ section {
 /* Projects Section */
 .projects {
     position: relative;
-    background: url('https://www.transparenttextures.com/patterns/cubes.png'), #000;
+    background: var(--section-bg);
     background-size: 340px, cover;
     background-repeat: repeat, no-repeat;
     background-position: center center;
@@ -678,7 +688,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.82);
+    background: var(--bg-secondary);
     z-index: 0;
 }
 .projects .container, .projects .section-title, .projects-grid, .project-card, .project-header, .project-icon, .project-title, .project-links, .project-badges, .project-tagline, .project-features {
@@ -700,7 +710,7 @@ section {
     flex-direction: column;
     align-items: flex-start;
     transition: all 0.4s ease;
-    color: #fff;
+    color: var(--text-primary);
     position: relative;
     overflow: visible;
     border: 2px solid transparent;
@@ -741,7 +751,7 @@ section {
 .project-title {
     font-size: 1.15rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 0;
 }
 .project-links {
@@ -761,7 +771,7 @@ section {
 }
 .project-links a:hover {
     background: #00d4ff;
-    color: #fff;
+    color: var(--text-primary);
 }
 .project-badges {
     display: flex;
@@ -771,7 +781,7 @@ section {
 }
 .project-badges .tech-badge {
     background: #00d4ff;
-    color: #fff;
+    color: var(--text-primary);
     border-radius: 12px;
     padding: 0.2rem 0.8rem;
     font-size: 0.95rem;
@@ -826,7 +836,7 @@ section {
 /* Education Section */
 .education {
     position: relative;
-    background: url('https://www.transparenttextures.com/patterns/cubes.png'), #000;
+    background: var(--section-bg);
     background-size: 340px, cover;
     background-repeat: repeat, no-repeat;
     background-position: center center;
@@ -883,7 +893,7 @@ section {
     min-width: 64px;
     min-height: 64px;
     background: linear-gradient(135deg, #232526 60%, #00d4ff 100%);
-    color: #fff;
+    color: var(--text-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -897,7 +907,7 @@ section {
 }
 .education-item:hover .education-icon {
     background: linear-gradient(135deg, #ff416c 60%, #00d4ff 100%);
-    color: #fff;
+    color: var(--text-primary);
 }
 .education-content {
     background: none;
@@ -916,7 +926,7 @@ section {
 }
 .education-degree {
     background: #00d4ff;
-    color: #fff;
+    color: var(--text-primary);
     border-radius: 8px;
     padding: 0.2rem 0.8rem;
     font-size: 0.95rem;
@@ -934,14 +944,14 @@ section {
     border: 1.5px solid #00d4ff;
 }
 .education-institution {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 0.2rem;
 }
 .education-badge {
     background: #00d4ff;
-    color: #fff;
+    color: var(--text-primary);
     border-radius: 8px;
     padding: 0.2rem 0.8rem;
     font-size: 0.95rem;
@@ -956,7 +966,7 @@ section {
     margin-top: 0.2rem;
 }
 .education-achievement span {
-    color: #fff;
+    color: var(--text-primary);
     font-weight: 700;
 }
 @media (max-width: 700px) {
@@ -978,7 +988,7 @@ section {
 /* Certifications Section */
 .certifications {
     position: relative;
-    background: url('https://www.transparenttextures.com/patterns/cubes.png'), #000;
+    background: var(--section-bg);
     background-size: 340px, cover;
     background-repeat: repeat, no-repeat;
     background-position: center center;
@@ -1011,7 +1021,7 @@ section {
     box-shadow: none;
     padding: 0 1.5rem 0 1.5rem;
     text-align: center;
-    color: #fff;
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1044,7 +1054,7 @@ section {
 }
 .certification-provider {
     background: #ff416c;
-    color: #fff;
+    color: var(--text-primary);
     border-radius: 8px;
     padding: 0.2rem 0.8rem;
     font-size: 0.95rem;
@@ -1070,13 +1080,13 @@ section {
 /* Languages Section - Tech Cubes Background */
 .languages {
     position: relative;
-    background: url('https://www.transparenttextures.com/patterns/cubes.png'), #000;
+    background: var(--section-bg);
     background-size: 340px, cover;
     background-repeat: repeat, no-repeat;
     background-position: center center;
     z-index: 1;
     overflow: hidden;
-    color: #fff;
+    color: var(--text-primary);
 }
 .languages::before {
     content: '';
@@ -1104,7 +1114,7 @@ section {
     align-items: center;
     gap: 0.5rem;
     background: linear-gradient(90deg, #2563eb 0%, #00d4ff 100%);
-    color: #fff;
+    color: var(--text-primary);
     font-weight: 600;
     font-size: 1.1rem;
     border-radius: 30px;
@@ -1138,7 +1148,7 @@ section {
 }
 .contact-badge {
     background: none;
-    color: #fff;
+    color: var(--text-primary);
     border-radius: 0;
     box-shadow: none;
     padding: 0;
@@ -1161,11 +1171,11 @@ section {
 .contact-badge-label {
     font-size: 1.05rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 0.1rem;
 }
 .contact-badge a {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 1.05rem;
     text-decoration: underline;
     word-break: break-all;
@@ -1712,7 +1722,7 @@ body, html {
     align-items: center;
     gap: 0.6rem;
     background: linear-gradient(135deg, #ff1744 0%, #ff416c 100%);
-    color: #fff;
+    color: var(--text-primary);
     font-weight: 600;
     font-size: 1.1rem;
     border-radius: 30px;
