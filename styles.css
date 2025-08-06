@@ -783,7 +783,7 @@ section {
 }
 .project-badges .tech-badge {
     background: #00d4ff;
-    color: var(--text-primary);
+    color: #fff;
     border-radius: 12px;
     padding: 0.2rem 0.8rem;
     font-size: 0.95rem;
@@ -792,7 +792,7 @@ section {
 }
 .project-tagline {
     font-size: 1.05rem;
-    color: #ff416c;
+    color: var(--accent-hover);
     font-weight: 600;
     margin-bottom: 0.7rem;
     margin-top: 0.2rem;
@@ -803,7 +803,7 @@ section {
     margin: 0;
 }
 .project-features li {
-    color: #e0e0e0;
+    color: var(--text-secondary);
     font-size: 1rem;
     margin-bottom: 0.3rem;
     position: relative;
