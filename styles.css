@@ -14,6 +14,7 @@
     --section-bg: url('https://www.transparenttextures.com/patterns/cubes.png'), #000;
     --border-color: rgba(255, 255, 255, 0.1);
     --shadow-color: rgba(0, 0, 0, 0.3);
+    --icon-color: #fff;
 }
 
 /* Light Theme */
@@ -26,11 +27,12 @@
     --text-muted: #6b7280;
     --accent-color: #dc2626;
     --accent-hover: #ef4444;
-    --navbar-bg: rgba(0, 0, 0, 0.95);
-    --navbar-text: #fff;
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --navbar-text: #374151;
     --section-bg: url('https://www.transparenttextures.com/patterns/cubes.png'), #f8fafc;
     --border-color: rgba(0, 0, 0, 0.1);
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --icon-color: #374151;
 }
 
 /* Reset and Base Styles */
@@ -892,22 +894,23 @@ section {
 .education-icon {
     min-width: 64px;
     min-height: 64px;
-    background: linear-gradient(135deg, #232526 60%, #00d4ff 100%);
+    background: linear-gradient(135deg, var(--accent-color) 0%, #00d4ff 100%);
     color: var(--text-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    box-shadow: 0 2px 8px rgba(0,212,255,0.10);
-    border: 4px solid #181a20;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    border: 4px solid var(--border-color);
     position: relative;
     z-index: 2;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 .education-item:hover .education-icon {
-    background: linear-gradient(135deg, #ff416c 60%, #00d4ff 100%);
+    background: linear-gradient(135deg, var(--accent-hover) 0%, #00d4ff 100%);
     color: var(--text-primary);
+    border-color: var(--accent-color);
 }
 .education-content {
     background: none;
